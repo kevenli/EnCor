@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7D15918-2245-4D0C-9BEF-4D3E0B7BE8F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnCor</RootNamespace>
+    <AssemblyName>EnCor</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version.cs">
+      <Link>Properties\Version.cs</Link>
+    </Compile>
+    <Compile Include="Configuration\EnCorConfigHandler.cs" />
+    <Compile Include="Configuration\IPolyMorphismConfig.cs" />
+    <Compile Include="Logging\DefaultLoggingModule.cs" />
+    <Compile Include="Logging\DefaultLoggingModuleConfig.cs" />
+    <Compile Include="Logging\LoggingFactory.cs" />
+    <Compile Include="Logging\LoggingImpl.cs" />
+    <Compile Include="ModuleLoader\DefaultModuleProviderAttribute.cs" />
+    <Compile Include="ModuleLoader\DefaultModuleProvider.cs" />
+    <Compile Include="ModuleLoader\IDefaultModuleProvider.cs" />
+    <Compile Include="ModuleLoader\ModuleContainer.cs" />
+    <Compile Include="ModuleLoader\ModuleDependency.cs" />
+    <Compile Include="ModuleLoader\ModuleDependencyAttribute.cs" />
+    <Compile Include="ModuleLoader\ModuleDependentCollection.cs" />
+    <Compile Include="ModuleLoader\ModuleDependentElement.cs" />
+    <Compile Include="ModuleLoader\ModuleDependentSorter.cs" />
+    <Compile Include="ModuleLoader\ModuleInitializer.cs" />
+    <Compile Include="Security\SecurityService.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="Configuration\FileEnCorConfig.cs" />
+    <Compile Include="Configuration\GenericEnumeratorWrapper.cs" />
+    <Compile Include="Configuration\IEnCorConfig.cs" />
+    <Compile Include="Configuration\IModuleConfig.cs" />
+    <Compile Include="Configuration\NamedConfigurationElement.cs" />
+    <Compile Include="Configuration\NamedElementCollection.cs" />
+    <Compile Include="Configuration\NameTypeConfigElement.cs" />
+    <Compile Include="Configuration\PolymorphicConfig.cs" />
+    <Compile Include="Configuration\PolymorphicConfigurationElementCollection.cs" />
+    <Compile Include="EnCorException.cs" />
+    <Compile Include="ModuleLoader\IEnCorModule.cs" />
+    <Compile Include="Logging\AppenderConfigCollection.cs" />
+    <Compile Include="Logging\Appenders\ConsoleLogAppender.cs" />
+    <Compile Include="Logging\Appenders\FileLogAppender.cs" />
+    <Compile Include="Logging\Appenders\FileLogAppenderConfig.cs" />
+    <Compile Include="Logging\ILogAppender.cs" />
+    <Compile Include="Logging\ILogging.cs" />
+    <Compile Include="Logging\Appenders\Log4netLogAppender.cs" />
+    <Compile Include="Logging\Appenders\Log4netLogAppenderConfig.cs" />
+    <Compile Include="Logging\Appenders\LogAppender.cs" />
+    <Compile Include="Logging\Appenders\LogAppenderAssembler.cs" />
+    <Compile Include="Logging\Appenders\LogAppenderConfig.cs" />
+    <Compile Include="Logging\LogAppenderFactory.cs" />
+    <Compile Include="Logging\LogEntry.cs" />
+    <Compile Include="Logging\LoggingModule.cs" />
+    <Compile Include="Logging\LoggingModuleConfig.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="ModuleLoader\IModuleAssembler.cs" />
+    <Compile Include="ModuleLoader\IServiceConfig.cs" />
+    <Compile Include="ModuleLoader\IServiceContainer.cs" />
+    <Compile Include="ModuleLoader\ModuleAssembler.cs" />
+    <Compile Include="ModuleLoader\ModuleConfig.cs" />
+    <Compile Include="ModuleLoader\ModuleException.cs" />
+    <Compile Include="ModuleLoader\ModuleFactory.cs" />
+    <Compile Include="ModuleLoader\ModuleInfo.cs" />
+    <Compile Include="ModuleLoader\ModuleStatus.cs" />
+    <Compile Include="ModuleLoader\ModuleStatusException.cs" />
+    <Compile Include="ModuleLoader\ServiceAssembler.cs" />
+    <Compile Include="ModuleLoader\ServiceBuildException.cs" />
+    <Compile Include="ModuleLoader\ServiceComponentAssembler.cs" />
+    <Compile Include="ModuleLoader\ServiceComponentConfig.cs" />
+    <Compile Include="ModuleLoader\ServiceConfig.cs" />
+    <Compile Include="ModuleLoader\ServiceConfigCollection.cs" />
+    <Compile Include="ModuleLoader\ServiceConfigException.cs" />
+    <Compile Include="ModuleLoader\ServiceContainer.cs" />
+    <Compile Include="ModuleLoader\ServiceFactory.cs" />
+    <Compile Include="ObjectBuilder\AssembleConfigAttribute.cs" />
+    <Compile Include="ObjectBuilder\AssembleFactory.cs" />
+    <Compile Include="ObjectBuilder\AssemblerAttribute.cs" />
+    <Compile Include="ObjectBuilder\BuilderContext.cs" />
+    <Compile Include="ObjectBuilder\IAssembler.cs" />
+    <Compile Include="ObjectBuilder\IBuilderContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime.cs" />
+    <Compile Include="Security\AuthenticationAdapters\AspnetAuthenticationAdapter.cs" />
+    <Compile Include="Security\AuthenticationAdapters\AspnetAuthenticationAdapterConfig.cs" />
+    <Compile Include="Security\AspnetAuthenticationProvider.cs" />
+    <Compile Include="Security\AspnetAuthenticationProviderConfig.cs" />
+    <Compile Include="Security\AspnetCredential.cs" />
+    <Compile Include="Security\AspnetTokenAdapter.cs" />
+    <Compile Include="Security\AspnetTokenAdapterConfig.cs" />
+    <Compile Include="Security\AspnetTokenCredential.cs" />
+    <Compile Include="Security\AspnetWindowsIntegratedAuthenticationAdapter.cs" />
+    <Compile Include="Security\AuthenticateToken.cs" />
+    <Compile Include="Security\AuthenticationAdapters\AuthenticationAdapter.cs" />
+    <Compile Include="Security\AuthenticationAdapterConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\AuthenticationAdapterConfigCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\AuthenticationConfig.cs" />
+    <Compile Include="Security\AuthenticationProviderConfig.cs" />
+    <Compile Include="Security\AuthenticationProviderConfigCollection.cs" />
+    <Compile Include="Security\AuthenticationProviders\AspnetAuthenticationProvider.cs" />
+    <Compile Include="Security\AuthenticationProviders\AspnetAuthenticationProviderConfig.cs" />
+    <Compile Include="Security\AuthenticationProviders\AuthenticationProvider.cs" />
+    <Compile Include="Security\AuthorizationConfig.cs" />
+    <Compile Include="Security\AuthorizationProviderConfig.cs" />
+    <Compile Include="Security\AuthorizationProviderConfigCollection.cs" />
+    <Compile Include="Security\ClaimObject.cs" />
+    <Compile Include="Security\ClaimSet.cs" />
+    <Compile Include="Security\ClaimTypes.cs" />
+    <Compile Include="Security\Credential.cs" />
+    <Compile Include="Security\Credentials\CredentialTypes.cs" />
+    <Compile Include="Security\Credentials\TokenCredential.cs" />
+    <Compile Include="Security\Credentials\WindowsCredential.cs" />
+    <Compile Include="Security\EnCorIdentity.cs" />
+    <Compile Include="Security\EnCorPrincipal.cs" />
+    <Compile Include="Security\IAuthenticationAdapter.cs" />
+    <Compile Include="Security\IAuthenticationProvider.cs" />
+    <Compile Include="Security\ISecurity.cs" />
+    <Compile Include="Security\Rights.cs" />
+    <Compile Include="Security\SecurityContext.cs" />
+    <Compile Include="Security\SecurityModule.cs" />
+    <Compile Include="Security\SecurityModuleAssembler.cs" />
+    <Compile Include="Security\SecurityModuleConfig.cs" />
+    <Compile Include="Security\UserIdentity.cs" />
+    <Compile Include="ServiceLocator\IContainer.cs" />
+    <Compile Include="ServiceLocator\DefaultContainer.cs" />
+    <Compile Include="ServiceLocator\IServiceLocator.cs" />
+    <Compile Include="ServiceLocator\ServiceLocatorModule.cs" />
+    <Compile Include="Util\XmlHelper.cs" />
+    <Compile Include="Web\AspnetRuntimeStarter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EnCor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

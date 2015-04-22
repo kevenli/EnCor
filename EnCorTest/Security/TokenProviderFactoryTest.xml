@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<test>
+  <BuildMemoryTokenProviderTest>
+    <tokenProvider name="memoryCached" type="EnCor.Security.MemoryCachedTokenProvider, EnCor.Runtime" />
+  </BuildMemoryTokenProviderTest>
+</test>

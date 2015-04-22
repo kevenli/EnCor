@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EnCor"
+    targetNamespace="http://tempuri.org/EnCor.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/EnCor.xsd"
+    xmlns:mstns="http://tempuri.org/EnCor.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="enCor">
+  </xs:element>
+</xs:schema>

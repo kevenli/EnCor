@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E27E23B7-D854-4126-B311-577A2625E54D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnCor.Wcf</RootNamespace>
+    <AssemblyName>EnCor.Wcf</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>http://localhost/EnCor.Wcf/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version.cs">
+      <Link>Properties\Version.cs</Link>
+    </Compile>
+    <Compile Include="Routing\Algorithms\DynamicNodesProvider.cs" />
+    <Compile Include="Routing\Algorithms\INodePriorityAlgorithm.cs" />
+    <Compile Include="Routing\Algorithms\NodeInfo.cs" />
+    <Compile Include="Routing\Algorithms\INodesProvider.cs" />
+    <Compile Include="Routing\Algorithms\StandardNodePriorityAlgorithm.cs" />
+    <Compile Include="Routing\Algorithms\StaticNodesProvider.cs" />
+    <Compile Include="AspnetFormsTokenExtension.cs" />
+    <Compile Include="AspnetFormsTokenHeaderBuilder.cs" />
+    <Compile Include="BindingType.cs" />
+    <Compile Include="ClientFactory.cs" />
+    <Compile Include="HeaderBuilder.cs" />
+    <Compile Include="NodeHosting\ServiceConfig.cs" />
+    <Compile Include="NodeHosting\ServiceConfigCollection.cs" />
+    <Compile Include="MatchAllAddressBehavior.cs" />
+    <Compile Include="NodeHost.cs" />
+    <Compile Include="NodeHosting\FacadeServiceConfig.cs" />
+    <Compile Include="NodeHosting\FacadeServiceConfigCollection.cs" />
+    <Compile Include="NodeHosting\IHeartCheckService.cs" />
+    <Compile Include="NodeHosting\HeartCheckService.cs" />
+    <Compile Include="NodeHosting\NodeHostConfig.cs" />
+    <Compile Include="NodeHosting\SingleInstanceServiceBehavior.cs" />
+    <Compile Include="Routing\AutoDelistConfig.cs" />
+    <Compile Include="Routing\DuplexRouterServiceInstanceProvider.cs" />
+    <Compile Include="Routing\NodeConfig.cs" />
+    <Compile Include="Routing\NodeConfigCollection.cs" />
+    <Compile Include="Routing\RouterServiceInstanceProvider.cs" />
+    <Compile Include="Routing\RoutingFailReason.cs" />
+    <Compile Include="Routing\ServiceNodeInfo.cs" />
+    <Compile Include="Routing\DuplexRouterService.cs" />
+    <Compile Include="Routing\IRegistrationService.cs" />
+    <Compile Include="Routing\RegisterService.cs" />
+    <Compile Include="Routing\RoutingService.cs" />
+    <Compile Include="Routing\WcfRoutingInfo.cs" />
+    <Compile Include="RouterHost.cs" />
+    <Compile Include="Routing\RouterHostConfig.cs" />
+    <Compile Include="Routing\ConfigurationUtility.cs" />
+    <Compile Include="Routing\RegistrationInfo.cs" />
+    <Compile Include="WcfClientMessageInspector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WcfAuthenticationHeader.cs" />
+    <Compile Include="WcfErrorHandler.cs" />
+    <Compile Include="WcfHeaderAuthenticationAdapter.cs" />
+    <Compile Include="WcfHeaderCredential.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EnCor\EnCor.csproj">
+      <Project>{C7D15918-2245-4D0C-9BEF-4D3E0B7BE8F9}</Project>
+      <Name>EnCor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

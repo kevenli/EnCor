@@ -1,0 +1,26 @@
+﻿<test>
+  <BuildServiceTest>
+    <service name='BetaService' type="EnCorTest.BetaModule.BetaService, EnCorTest"
+                   dataType="EnCorTest.BetaModule.BetaServiceConfig, EnCorTest"
+                   interface="EnCorTest.BetaModule.IBetaService, EnCorTest">
+      <interfaces>
+        <interface type="EnCorTest.BetaModule.IBetaService2, EnCorTest" />
+      </interfaces>
+      <component name="DataProvider" type="EnCorTest.BetaModule.BetaDataProvider, EnCorTest"
+                 dataType="EnCorTest.BetaModule.BetaDataProviderConfig, EnCorTest"
+                 interface="EnCorTest.BetaModule.IBetaDataProvider, EnCorTest" />
+    </service>
+  </BuildServiceTest>
+  <BuildServiceComponentsTest>
+    <service name='BetaService' type="EnCorTest.BetaModule.BetaService, EnCorTest"
+                   dataType="EnCorTest.BetaModule.BetaServiceConfig, EnCorTest"
+                   interface="EnCorTest.BetaModule.IBetaService, EnCorTest">
+      <interfaces>
+        <interface type="EnCorTest.BetaModule.IBetaService2, EnCorTest" />
+      </interfaces>
+      <component name="DataProvider" type="EnCorTest.BetaModule.BetaDataProvider, EnCorTest"
+                 dataType="EnCorTest.BetaModule.BetaDataProviderConfig, EnCorTest"
+                 interface="EnCorTest.BetaModule.IBetaDataProvider, EnCorTest" />
+    </service>
+  </BuildServiceComponentsTest>
+</test>

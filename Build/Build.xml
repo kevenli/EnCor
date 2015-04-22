@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <SolutionRoot>..</SolutionRoot>
+        <BuildOutput>..\Build\Output\</BuildOutput>
+    </PropertyGroup>
+	<Target Name="ClearOutput">
+		<RemoveDir Directories="$(BuildOutput)" ContinueOnError="false" />
+        <MakeDir Directories="$(BuildOutput)" ContinueOnError="false" />
+	</Target>
+	<Target Name="BuildAll">
+        <MSBuild
+            Projects="..\EnCor.sln"
+            ContinueOnError="false"
+            Targets="Rebuild"
+            Properties="Configuration=Release"
+			/>
+    </Target>
+	<Target Name="BuildEnCorApp">
+        <MSBuild
+            Projects="..\EnCor.App\EnCor.App.csproj"
+            ContinueOnError="false"
+            Targets="Build"
+            Properties="Configuration=Release;OutDir=$(BuildOutput)\EnCor\"
+			/>
+    </Target>
+	<Target Name="BuildRouting">
+        <MSBuild
+            Projects="..\EnCor.Wcf\EnCor.Wcf.csproj"
+            ContinueOnError="false"
+            Targets="Build"
+            Properties="Configuration=Release;OutDir=$(BuildOutput)\Routing\bin\"
+			/>
+    </Target>
+    <Target Name="BuildNodeHosting">
+        <MSBuild
+            Projects="..\EnCor.Wcf\EnCor.Wcf.csproj"
+            ContinueOnError="false"
+            Targets="Build"
+            Properties="Configuration=Release;OutDir=$(BuildOutput)\NodeHosting\bin\"
+			/>
+    </Target>
+    <Target Name="Main">
+		<CallTarget Targets="ClearOutput" />
+		<CallTarget Targets="BuildAll" />
+		<CallTarget Targets="BuildEnCorApp" />
+		<CallTarget Targets="BuildRouting" />
+        <CallTarget Targets="BuildNodeHosting" />
+    </Target>
+</Project>

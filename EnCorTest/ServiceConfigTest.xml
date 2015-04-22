@@ -1,0 +1,42 @@
+﻿<test>
+  <ComponentInterfaceTest1>
+    <service name='BetaService' type="EnCorTest.BetaModule.BetaService, EnCorTest"
+                   dataType="EnCorTest.BetaModule.BetaServiceConfig, EnCorTest">
+      <component name="dataProvider" type="EnCorTest.BetaModule.BetaDataProvider, EnCorTest"
+                 dataType="EnCorTest.BetaModule.BetaDataProviderConfig, EnCorTest"
+                 interface="EnCorTest.BetaModule.BetaDataProvider, EnCorTest"/>
+    </service>
+  </ComponentInterfaceTest1>
+  <ComponentInterfaceTest2>
+    <service name='BetaService' type="EnCorTest.BetaModule.BetaService, EnCorTest"
+                   dataType="EnCorTest.BetaModule.BetaServiceConfig, EnCorTest">
+      <component name="dataProvider" type="EnCorTest.BetaModule.BetaDataProvider, EnCorTest"
+                 dataType="EnCorTest.BetaModule.BetaDataProviderConfig, EnCorTest"/>
+    </service>
+  </ComponentInterfaceTest2>
+  <ComponentInterfaceTest3>
+    <service name='BetaService' type="EnCorTest.BetaModule.BetaService, EnCorTest"
+                   dataType="EnCorTest.BetaModule.BetaServiceConfig, EnCorTest">
+      <component name="dataProvider" type="EnCorTest.BetaModule.BetaDataProvider, EnCorTest"
+                 dataType="EnCorTest.BetaModule.BetaDataProviderConfig, EnCorTest"
+                 interface="EnCorTest.BetaModule.IBetaDataProvider, EnCorTest"/>
+    </service>
+  </ComponentInterfaceTest3>
+  <ServiceInterfaceTest>
+    <service name='BetaService' type="EnCorTest.BetaModule.BetaService, EnCorTest"
+                   dataType="EnCorTest.BetaModule.BetaServiceConfig, EnCorTest">
+      <component name="dataProvider" type="EnCorTest.BetaModule.BetaDataProvider, EnCorTest"
+                 dataType="EnCorTest.BetaModule.BetaDataProviderConfig, EnCorTest"
+                 interface="EnCorTest.BetaModule.IBetaDataProvider, EnCorTest"/>
+    </service>
+  </ServiceInterfaceTest>
+  <ServiceInterfaceTest2>
+    <service name='BetaService' type="EnCorTest.BetaModule.BetaService, EnCorTest"
+                   dataType="EnCorTest.BetaModule.BetaServiceConfig, EnCorTest"
+                  interface="EnCorTest.BetaModule.BetaService, EnCorTest">
+      <component name="dataProvider" type="EnCorTest.BetaModule.BetaDataProvider, EnCorTest"
+                 dataType="EnCorTest.BetaModule.BetaDataProviderConfig, EnCorTest"
+                 interface="EnCorTest.BetaModule.IBetaDataProvider, EnCorTest"/>
+    </service>
+  </ServiceInterfaceTest2>
+</test>
